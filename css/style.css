@@ -1,0 +1,9 @@
+body {
+    background-image: url('http://mlb.mlb.com/mlb/images/devices/ballpark/1920x1080/1.jpg');
+}
+
+.tray {
+    background-color: transparent;
+    width: 98%;
+    margin: 30% auto 0;
+}
