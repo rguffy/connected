@@ -1,11 +1,16 @@
 var Feed = (function() {
     var url  = '',
-        date = Date.now();
+        date = Date.now(),
+        feedData = {};
 
     function Feed(url_base, date) {
         this.setFeedDate(date);
         this.setFeedURL(url_base);
     }
+
+    Feed.prototype.setFeedData = function(data) {
+        feedData = data;
+    };
 
     Feed.prototype.setFeedDate = function(date_str) {
         date = new Date(date_str);
@@ -19,22 +24,20 @@ var Feed = (function() {
         url = url_base + '/year_' + year + '/month_' + month + '/day_' + day + '/master_scoreboard.json';
     };
 
-    Feed.prototype.retrieveFeedData = function() {
-        var xhr = new XMLHttpRequest({
-            "Access-Control-Allow-Origin": 'http://gdx.mlb.com'
-        });
+    Feed.prototype.getFeedData = function() {
+        return feedData;
+    };
 
-        xhr.onload = function() {
-            if (xhr.readyState === 4) {
-                if (xhr.status === 200) {
-                    console.log( JSON.parse(xhr.responseText) );
-                } else {
-                    console.error('Ajax failed');
-                }
-            }
+    Feed.prototype.retrieveFeedData = function(callback) {
+        var xhr = new XMLHttpRequest();
+
+        xhr.onload = callback;
+
+        xhr.onerror = function() {
+            console.error('Ajax failed');
         };
 
-        xhr.open('GET', url);
+        xhr.open('GET', 'day.json', false);
         xhr.send();
     };
 
