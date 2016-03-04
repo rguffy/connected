@@ -2,6 +2,8 @@ function Feed(url_base, date_str) {
     var url = '',
         date = new Date(date_str) || Date.now();
 
+    setURL();
+
     function setURL() {
         var year = date.getFullYear(),
             month = date.getMonth() + 1,
@@ -25,6 +27,7 @@ function Feed(url_base, date_str) {
             };
 
             xhr.open('GET', 'day.json', false);
+            //xhr.open('GET', url, false);
             xhr.send();
         }
 

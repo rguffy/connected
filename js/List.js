@@ -56,7 +56,7 @@ function List(items, obj) {
             target.appendChild(cont);
             child = cont.firstElementChild;
             move_dist = child.offsetWidth;
-            //cont.parentNode.style.width = move_dist + 'px';
+            cont.parentNode.style.width = (move_dist * (len + 1)) + 'px';
             position = dist * sel_id;
             select = document.getElementById(list[sel_id].hash);
             select.classList.add('selected');
