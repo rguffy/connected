@@ -1,9 +1,38 @@
 body {
     background-image: url('http://mlb.mlb.com/mlb/images/devices/ballpark/1920x1080/1.jpg');
+    color: #eeeeee;
+    overflow: hidden;
 }
 
-.tray {
+li {
+    list-style-type: none;
+    padding: 10px;
+    display: inline-block;
+}
+
+.thumb img {
+    border: none;
+    background-color: #444444;
+}
+
+.selected img{
+    padding: 5px;
+    border: solid #eeeeaa 5px;
+}
+
+#tray {
+    display: inline-block;
     background-color: transparent;
-    width: 98%;
-    margin: 30% auto 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 25% auto 0;
+    overflow: visible;
+}
+
+#slider {
+    display: inline-block;
+    position: relative;
+    padding: 0;
+
 }

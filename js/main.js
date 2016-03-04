@@ -1,8 +1,9 @@
-var date      = '2014-05-20 00:00:00 PDT',
+var date      = '2015-05-21 00:00:00 PDT',
     url_base  = 'http://gdx.mlb.com/components/game/mlb',
     feed_obj  = new Feed(url_base, date),
     feed_data = {},
-    //list_obj  = new List(),
+    list_obj,
+    tray,
     game_feed = [];
 
 window.onload = function() {
@@ -13,5 +14,9 @@ window.onload = function() {
         console.log(game_feed);
     });
 
+    list_obj = new List(game_feed, Thumb);
+    tray = document.getElementById('tray');
+    list_obj.render(tray);
 
+    document.onkeydown = list_obj.keyPress;
 };
