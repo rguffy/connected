@@ -13,6 +13,7 @@ li {
 .thumb img {
     border: none;
     background-color: #444444;
+    position: relative;
 }
 
 .selected img{
@@ -21,13 +22,26 @@ li {
     transform: translateY(15%);
 }
 
+.hidden {
+    display: none;
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    position: fixed;
+    top: -0.25em;
+    left: 46%;
+    width: inherit;
+}
+
 #tray {
     display: inline-block;
     background-color: transparent;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    margin: 25% auto 0;
+    margin: 20% auto 0;
     overflow: visible;
 }
 

@@ -10,8 +10,6 @@ window.onload = function() {
     feed_obj.retrieveFeedData(function(response) {
         feed_data = JSON.parse(response.target.responseText);
         game_feed = feed_data.data.games.game;
-
-        console.log(game_feed);
     });
 
     list_obj = new List(game_feed, Thumb);
