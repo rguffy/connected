@@ -18,6 +18,7 @@ li {
 .selected img{
     padding: 5px;
     border: solid #eeeeaa 5px;
+    transform: translateY(8%);
 }
 
 #tray {
