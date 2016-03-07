@@ -1,4 +1,4 @@
-var date      = '2015-05-21 00:00:00 PDT',
+var date      = '2015-05-20 00:00:00 PDT',
     url_base  = 'http://gdx.mlb.com/components/game/mlb',
     feed_obj  = new Feed(url_base, date),
     feed_data = {},

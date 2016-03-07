@@ -9,7 +9,13 @@ function Feed(url_base, date_str) {
             month = date.getMonth() + 1,
             day = date.getDate();
 
-        url = url_base + '/year_' + year + '/month_' + month + '/day_' + day + '/master_scoreboard.json';
+        url = url_base + '/year_' + year + '/month_' + pad(month, 2) + '/day_' + pad(day, 2) + '/master_scoreboard.json';
+    }
+
+    function pad(number, width, pad_char) {
+        pad_char = pad_char || '0';
+        number = number + '';
+        return (number.length >= width) ? number : new Array(width - number.length + 1).join(pad_char) + number;
     }
 
     return {
@@ -26,8 +32,8 @@ function Feed(url_base, date_str) {
                 console.error('Ajax failed');
             };
 
-            xhr.open('GET', 'day.json', false);
-            //xhr.open('GET', url, false);
+            //xhr.open('GET', 'day.json', false);
+            xhr.open('GET', url, false);
             xhr.send();
         }
 
